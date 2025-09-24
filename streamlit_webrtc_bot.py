@@ -23,7 +23,7 @@ st.set_page_config(
 )
 
 # Initialize OpenAI client
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets("OPENAI_API_KEY")
 if not api_key:
     st.error("❌ OpenAI API key not found! Please check your .env file.")
     st.stop()
@@ -488,4 +488,5 @@ def main():
         """)
 
 if __name__ == "__main__":
+
     main()
