@@ -1,2 +1,6 @@
-openai
 streamlit
+streamlit-webrtc
+av
+SpeechRecognition
+pyttsx3
+openai
