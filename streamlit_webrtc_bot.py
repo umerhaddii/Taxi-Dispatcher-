@@ -12,7 +12,6 @@ from openai import OpenAI
 import os
 from typing import List, Dict
 
-
 # Configure page
 st.set_page_config(
     page_title="🚖 Voice Taxi Dispatcher (WebRTC)", 
@@ -20,10 +19,10 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize OpenAI client
-api_key = st.secrets("OPENAI_API_KEY")
+# Initialize OpenAI client using Streamlit secrets
+api_key = st.secrets.get("OPENAI_API_KEY")
 if not api_key:
-    st.error("❌ OpenAI API key not found! Please check your .env file.")
+    st.error("❌ OpenAI API key not found! Please add it to your Streamlit secrets.")
     st.stop()
 
 client = OpenAI(api_key=api_key)
@@ -486,6 +485,4 @@ def main():
         """)
 
 if __name__ == "__main__":
-
     main()
-
