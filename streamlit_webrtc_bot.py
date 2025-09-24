@@ -10,10 +10,8 @@ import time
 import json
 from openai import OpenAI
 import os
-from dotenv import load_dotenv
 from typing import List, Dict
 
-load_dotenv()
 
 # Configure page
 st.set_page_config(
@@ -490,3 +488,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
